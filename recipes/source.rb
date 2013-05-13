@@ -21,7 +21,7 @@ node.default['passenger']['apache_mpm']  = 'prefork'
 case node['platform_family']
 when "arch"
   package "apache"
-when "rhel"
+when "rhel", "fedora"
   package "httpd-devel"
   if node['platform_version'].to_f < 6.0
     package 'curl-devel'
